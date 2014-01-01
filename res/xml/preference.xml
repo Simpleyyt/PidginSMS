@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="功能" >
+        <CheckBoxPreference
+            android:key="pre_yimi_service"
+            android:summaryOff="Pidgin短信服务：关闭"
+            android:summaryOn="Pidgin短信服务：开启"
+            android:title="Pidgin短信服务" />
+
+        <Preference
+            android:dependency="pre_yimi_service"
+            android:key="pre_refresh_contacts"
+            android:summary="刷新电脑端的联系人列表"
+            android:title="发送联系人列表" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="帐户" >
+        <EditTextPreference
+            android:key="pre_user"
+            android:summary="最好是设置成本机号码或者你的名字"
+            android:title="用户名" />
+        <EditTextPreference
+            android:inputType="textPassword"
+            android:key="pre_pass"
+            android:summary="设置验证的密码"
+            android:title="密码" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="关于" >
+        <Preference
+            android:summary="关于Pidgin短信"
+            android:title="关于" android:key="pre_about"/>
+        <Preference
+            android:summary="反馈问题或者想法"
+            android:title="反馈" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="mailto:simpleyyt@gmail.com" />
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
